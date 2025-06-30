@@ -1,67 +1,85 @@
 
 # 🖼️ Change Detection App — Automated Detection of Removed Objects Between Two Images
 
-An intuitive computer vision-based app for detecting **removed objects** between two input images — automatically and reliably.
+[![Python](https://img.shields.io/badge/Python-3.7%2B-blue.svg)](https://www.python.org/)  
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Ideal for applications in:
+An intuitive and fully automated **computer vision app** to detect **removed objects** between two input images using OpenCV and Python.
 
-- 🛡️ Security Surveillance (e.g., detecting theft or tampering)
-- 🏗️ Construction Progress Monitoring (e.g., missing equipment or materials)
-- 🛒 Retail Loss Prevention (e.g., empty shelves or misplaced items)
-- 🌳 Environmental Change Tracking (e.g., illegal deforestation or soil erosion)
+This app is ideal for:
+- 🛡️ **Security Surveillance** (e.g., detecting theft, missing assets)
+- 🏗️ **Construction Progress Monitoring** (e.g., missing equipment or materials)
+- 🛒 **Retail Loss Prevention** (e.g., empty shelves, misplaced items)
+- 🌳 **Environmental Change Tracking** (e.g., deforestation, land changes)
+
+---
+
+## 🚀 Quick Features
+
+✔️ Fully automated pipeline  
+✔️ Web-based UI using Flask  
+✔️ Visual bounding boxes over removed objects  
+✔️ Batch processing supported  
+✔️ Lightweight, no machine learning training required  
+✔️ Easy-to-use Jupyter Notebook for detailed analysis  
 
 ---
 
 ## 📌 Problem Statement
 
 Manually detecting object removal between two images is:
+- ❌ Time-consuming  
+- ❌ Error-prone  
+- ❌ Not scalable for real-world deployment  
 
--  Time-consuming  
--  Error-prone  
--  Not scalable for real-world deployments  
+Real-world conditions like:
+- **Lighting variations**
+- **Viewpoint shifts**
+- **Occlusions**
+- **Background noise**
 
-Further challenges such as **lighting changes**, **minor viewpoint shifts**, **occlusions**, and **background noise** make manual comparison unreliable.
+… make manual comparison ineffective.
 
-🧠 **This app solves the problem by** automating the detection process using image processing techniques — providing quick, reliable, and interpretable outputs, with no ML training required.
+### ✅ Solution:
+This app **automates object removal detection** using reliable computer vision techniques that are:
+- Fast
+- Scalable
+- Interpretable
 
 ---
 
-## 🧠 How It Works
-
-The core of the app is a computer vision pipeline built with OpenCV:
+## 🧠 How It Works — Detection Pipeline
 
 1. 🔄 **Image Preprocessing**
-   - Convert both “before” and “after” images to **grayscale**
-   - Apply **Gaussian blur** to reduce noise and smooth textures
+   - Convert input images to grayscale
+   - Apply Gaussian blur to reduce camera noise and texture complexity
 
 2. 🧮 **Image Differencing**
-   - Compute the **absolute difference** between the two images, pixel by pixel
+   - Compute absolute pixel-wise difference between the two images
 
 3. 🎯 **Thresholding & Morphological Filtering**
-   - Apply **binary thresholding** to isolate areas of change
-   - Use **morphological closing** (dilation → erosion) to eliminate small artifacts
+   - Apply binary thresholding to segment major changes
+   - Use morphological closing to remove minor noise and artifacts
 
 4. ✂️ **Contour Detection**
-   - Extract **contours** from the processed difference map
-   - Filter based on area to remove false positives
+   - Extract contours and filter out small, irrelevant regions
 
 5. 📏 **Visualization**
-   - Draw **bounding boxes** around detected removed objects
-   - Output saved image clearly marks what was removed
+   - Draw bounding boxes around detected removed objects
+   - Save processed images for easy review and reporting
 
 ---
 
 ## 🖼️ Sample Output
 
-- ✅ Clear bounding boxes over missing objects
-- 🖼️ All outputs saved to `task_2_output/` directory
-- 🔁 Includes web-based image upload and result download features
+- ✅ Clear bounding boxes over removed objects
+- 🖼️ Results saved to `task_2_output/` directory
+- 🔁 Upload and download interface for easy web-based usage
 
 ### 📁 Example Output Files:
-
 ```text
 task_2_output/
-├── 1~3.jpg       ← Before/After comparison with detection overlay
+├── 1~3.jpg       ← Processed detection result
 ├── 2~3.jpg
 ├── ...
 └── detected_changes.jpg
@@ -69,28 +87,28 @@ task_2_output/
 
 ---
 
-## 📁 Project Structure
+## 📂 Project Structure
 
 ```bash
 Produtz/
-├── app.py                           # Main Flask app (UI + detection logic)
-├── Change_Detection.ipynb           # Step-by-step walkthrough in Jupyter
+├── app.py                           # Flask web app (UI + detection logic)
+├── Change_Detection.ipynb           # Jupyter notebook for detailed walkthrough
 ├── detected_changes.jpg             # Sample output image
-├── requirements.txt                 # Python dependencies
+├── requirements.txt                 # Python dependency list
 ├── task_2_output/                   # Processed result images
 │   ├── 1~3.jpg, ..., 18~3.jpg
-├── temp/                            # Temporary storage during app usage
+├── temp/                            # Temporary image storage
 │   └── <uploaded files>.jpg
 └── Task 2 - Change Detection Algorithm/
     └── input-images/
-        ├── 1.jpg, 1~2.jpg, ..., 18~2.jpg  # Before/after image pairs
+        ├── 1.jpg, 1~2.jpg, ..., 18~2.jpg  # Before/After image pairs
 ```
 
 ---
 
 ## ⚙️ Setup Instructions
 
-### 1️⃣ Clone This Repository
+### 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/sAI-2025/change-detection-app.git
@@ -109,55 +127,62 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-### 3️⃣ Install All Dependencies
-
-Ensure you have **Python 3.7 or higher**.
+### 3️⃣ Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
+✔️ Python 3.7+ is required.
+
 ---
 
 ## 🚀 How to Run the App
 
-### ▶️ Option 1: Run via Python (Flask UI)
+### ▶️ Run via Flask Web App
 
 ```bash
 python app.py
 ```
 
 * Launches a local web app (Flask)
-* Upload “before” and “after” images
+* Upload "Before" and "After" images via the web interface
 * Click **“Detect Removed Objects”**
-* Download the processed output
+* View and download the processed result
 
-### 🧪 Option 2: Run via Jupyter Notebook
+### 🧪 Run via Jupyter Notebook
 
 ```bash
 jupyter notebook Change_Detection.ipynb
 ```
 
-Explore and visualize the full pipeline step-by-step. Ideal for learning, debugging, or customizing.
+* Step-by-step execution
+* Ideal for debugging, learning, and custom processing
+
+---
+
+## ✅ Key Advantages
+
+* 🔧 **No training data required**
+* ⚡ **Fast and lightweight**
+* 💻 **Works with local files, no internet dependency**
+* 🌍 **Real-world robust: handles small misalignments and noise**
+* 🖼️ **Visual outputs for quick verification**
 
 ---
 
 ## 📈 Future Improvements
 
-🔧 Planned upgrades and enhancements:
-
 * ✅ Auto-alignment of input images (image registration)
-* ✅ Add slider UI to adjust detection thresholds dynamically
-* ✅ Detect added/modified objects as well (not just removals)
-* ✅ Integrate deep learning models for semantic-aware change detection
-* ✅ Real-time detection from surveillance video streams
-* ✅ Side-by-side interactive before/after comparison
+* ✅ Dynamic threshold adjustment via UI sliders
+* ✅ Detection of added/modified objects (beyond removal)
+* ✅ Deep learning-based semantic change detection
+* ✅ Real-time video feed support
+* ✅ Interactive before/after slider for better UX
 
 ---
 
 ## 📦 Requirements
-
-**From `requirements.txt`:**
 
 ```text
 opencv-python
@@ -167,7 +192,7 @@ flask
 Pillow
 ```
 
-To install:
+Install using:
 
 ```bash
 pip install -r requirements.txt
@@ -177,23 +202,23 @@ pip install -r requirements.txt
 
 ## 🔍 Real-World Use Cases
 
-### 🛒 Retail Theft or Restocking
+### 🛒 Retail Loss Prevention
 
-* **Before**: Shelf fully stocked
-* **After**: Items missing or misplaced
-* ➡️ Detected and marked in output
+* Before: Shelf fully stocked
+* After: Items missing or misplaced
+  ✔️ Detected and marked in output
 
-### 🏗️ Construction Equipment Tracking
+### 🏗️ Construction Monitoring
 
-* **Before**: Site with tools and machinery
-* **After**: Equipment removed overnight
-* ➡️ Identified via bounding boxes
+* Before: Tools and machinery present
+* After: Equipment removed overnight
+  ✔️ Identified via bounding boxes
 
-### 🌿 Environmental Monitoring
+### 🌿 Environmental Tracking
 
-* **Before**: Natural habitat with trees
-* **After**: Trees cut down or displaced
-* ➡️ App highlights affected regions
+* Before: Natural habitat intact
+* After: Trees cut down or displaced
+  ✔️ Detected and highlighted regions
 
 ---
 
@@ -208,8 +233,43 @@ pip install -r requirements.txt
 
 ## 📝 License
 
-MIT License.
-Feel free to modify and use this project for both personal and commercial use — attribution appreciated.
+This project is licensed under the MIT License.
+Feel free to modify, extend, and use it for both personal and commercial purposes. Attribution is appreciated.
 
 ---
 
+## 📚 Additional Resources
+
+* [OpenCV Documentation](https://docs.opencv.org/)
+* [Flask Documentation](https://flask.palletsprojects.com/)
+* [Python venv Guide](https://docs.python.org/3/library/venv.html)
+
+---
+
+## ⭐️ Support the Project
+
+If you find this project useful, please consider giving it a ⭐️ on GitHub.
+It helps grow the project and encourages further improvements!
+
+---
+
+```
+
+---
+
+### ✅ Key Improvements:
+- Added badges (Python version, license)
+- Quick feature list at the top
+- Clear advantages section
+- Better real-world examples with ✔️ highlights
+- Future improvements formatted as a roadmap
+- Additional resources for user learning
+- ⭐️ GitHub support call-to-action
+
+If you’d like, I can help you:
+- Design a project logo  
+- Write a `CONTRIBUTING.md`  
+- Setup deployment guides (Render/Heroku/Streamlit Cloud)
+
+Let me know!
+```
