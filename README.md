@@ -28,9 +28,9 @@ This app is ideal for:
 ## 📌 Problem Statement
 
 Manually detecting object removal between two images is:
-- ❌ Time-consuming  
-- ❌ Error-prone  
-- ❌ Not scalable for real-world deployment  
+-  Time-consuming  
+-  Error-prone  
+-  Not scalable for real-world deployment  
 
 Real-world conditions like:
 - **Lighting variations**
@@ -253,23 +253,5 @@ It helps grow the project and encourages further improvements!
 
 ---
 
-```
 
----
 
-### ✅ Key Improvements:
-- Added badges (Python version, license)
-- Quick feature list at the top
-- Clear advantages section
-- Better real-world examples with ✔️ highlights
-- Future improvements formatted as a roadmap
-- Additional resources for user learning
-- ⭐️ GitHub support call-to-action
-
-If you’d like, I can help you:
-- Design a project logo  
-- Write a `CONTRIBUTING.md`  
-- Setup deployment guides (Render/Heroku/Streamlit Cloud)
-
-Let me know!
-```
