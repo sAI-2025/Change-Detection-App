@@ -1,12 +1,11 @@
 
 # 🖼️ Change Detection App — Automated Detection of Removed Objects Between Two Images
 
-[![Python](https://img.shields.io/badge/Python-3.7%2B-blue.svg)](https://www.python.org/)  
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+<!---[![Python](https://img.shields.io/badge/Python-3.7%2B-blue.svg)](https://www.python.org/)  -->
+<!---[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  -->
 <!-- Badges -->
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.10-blue?logo=python" alt="Python 3.10"/>
-  <img src="https://img.shields.io/badge/LLM-Powered-brightgreen?logo=openai" alt="LLM Powered"/>
   <img src="https://img.shields.io/badge/License-MIT-green?logo=opensourceinitiative" alt="MIT License"/>
   <img src="https://img.shields.io/badge/Status-Beta-orange?logo=githubactions" alt="Beta Status"/>
   <img src="https://img.shields.io/badge/LangChain-Framework-4A90E2?logo=langchain" alt="LangChain"/>
