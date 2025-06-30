@@ -3,7 +3,25 @@
 
 [![Python](https://img.shields.io/badge/Python-3.7%2B-blue.svg)](https://www.python.org/)  
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+<!-- Badges -->
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10-blue?logo=python" alt="Python 3.10"/>
+  <img src="https://img.shields.io/badge/LLM-Powered-brightgreen?logo=openai" alt="LLM Powered"/>
+  <img src="https://img.shields.io/badge/License-MIT-green?logo=opensourceinitiative" alt="MIT License"/>
+  <img src="https://img.shields.io/badge/Status-Beta-orange?logo=githubactions" alt="Beta Status"/>
+  <img src="https://img.shields.io/badge/LangChain-Framework-4A90E2?logo=langchain" alt="LangChain"/>
+  <img src="https://img.shields.io/badge/ChromaDB-Vector%20Store-00BFFF?logo=database" alt="ChromaDB"/>
+  <img src="https://img.shields.io/badge/Groq-API-purple?logo=api" alt="Groq API"/>
+  <img src="https://img.shields.io/badge/Colab-Ready-orange?logo=googlecolab" alt="Google Colab"/>
+  <a href="https://colab.research.google.com/drive/1r6LuB3XVM_V4OWgakm90mKBLTTht2STp" target="_blank">
+    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"/>
+  </a>
+  <a href="https://github.com/sAI-2025/Jupiter_FAQ_Bot/stargazers" target="_blank">
+    <img src="https://img.shields.io/github/stars/sAI-2025/Jupiter_FAQ_Bot?style=social" alt="GitHub Stars"/>
+  </a>
+</p>
 
+  
 An intuitive and fully automated **computer vision app** to detect **removed objects** between two input images using OpenCV and Python.
 
 This app is ideal for:
