@@ -1,6 +1,4 @@
-Here’s your updated `README.md` with your personal details added:
 
-````markdown
 # 🖼️ Change Detection App — Automated Detection of Removed Objects Between Two Images
 
 An intuitive computer vision-based app for detecting **removed objects** between two input images — automatically and reliably.
